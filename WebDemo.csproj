@@ -131,6 +131,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\admin\adminAreaRegistration.cs" />
     <Compile Include="Areas\admin\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\admin\Controllers\menusController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\LayoutController.cs" />
@@ -2114,6 +2115,11 @@
     <Content Include="Areas\admin\Scripts\vendor\jquery\jquery.slim.min.map" />
     <Content Include="Areas\admin\Views\Shared\Layout.cshtml" />
     <Content Include="Areas\admin\Views\Default\Index.cshtml" />
+    <Content Include="Areas\admin\Views\menus\Create.cshtml" />
+    <Content Include="Areas\admin\Views\menus\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\menus\Details.cshtml" />
+    <Content Include="Areas\admin\Views\menus\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\menus\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

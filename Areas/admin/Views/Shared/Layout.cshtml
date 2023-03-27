@@ -65,7 +65,7 @@
                 <div id="manage" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Đối tượng cần quản lý:</h6>
-                        <a class="collapse-item" href="@Url.Action("Index, menus")">Menu</a>
+                        <a class="collapse-item" href="@Url.Action("Index", "menus")">Menu</a>
                     </div>
                 </div>
             </li>
@@ -445,7 +445,8 @@
 
     <!-- Custom scripts for all pages-->
     <script src="~/Areas/admin/Scripts/js/sb-admin-2.min.js"></script>
-
+    @RenderSection("_Header", false)
+    @RenderSection("_Footer", false)
 </body>
 
 </html>

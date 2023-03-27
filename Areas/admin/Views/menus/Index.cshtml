@@ -1,0 +1,107 @@
+﻿@model IEnumerable<WebDemo.Models.menu>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/Layout.cshtml";
+}
+
+@section _Header
+{
+    <!-- Custom styles for this page -->
+    <link href="~/Areas/admin/Scripts/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+}
+
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <p class="mb-4">
+        DataTables is a third party plugin that is used to generate the demo table below.
+        For more information about DataTables, please visit the <a target="_blank"
+                                                                   href="https://datatables.net">official DataTables documentation</a>.
+    </p>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Tên Menu</th>
+                            <th>Liên kết</th>
+                            <th>Meta</th>
+                            <th>Ẩn</th>
+                            <th>Thứ tự menu</th>
+                            <th>Ngày bắt đầu</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>STT</th>
+                            <th>Tên Menu</th>
+                            <th>Liên kết</th>
+                            <th>Meta</th>
+                            <th>Ẩn</th>
+                            <th>Thứ tự menu</th>
+                            <th>Ngày bắt đầu</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @{ var Number = 1;}
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.Raw(Number++)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.link)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.meta)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.hide)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.order)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.datebegin)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                    
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section _Footer
+{
+    <!-- Page level plugins -->
+    <script src="~/Areas/admin/Scripts/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Areas/admin/Scripts/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="~/Areas/admin/Scripts/js/demo/datatables-demo.js"></script>
+}

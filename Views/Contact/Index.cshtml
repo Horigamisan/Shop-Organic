@@ -83,3 +83,23 @@
     </div>
 </div>
 
+<script>
+    // Lấy URL của trang hiện tại
+var url = window.location.href;
+
+// Tìm tất cả các thẻ <a> trong thanh menu
+var links = document.querySelectorAll('.header__menu a');
+
+// Duyệt qua từng thẻ <a>
+links.forEach(function(link) {
+  // Nếu href của thẻ <a> trùng với URL của trang hiện tại
+  if (link.href === url) {
+    // Thêm lớp "active" vào thẻ <a>
+    link.classList.add('active');
+
+    // Thêm lớp "active" vào thẻ cha của thẻ <a>
+    var parent = link.parentElement;
+    parent.classList.add('active');
+  }
+});
+</script>

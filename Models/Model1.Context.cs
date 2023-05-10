@@ -31,7 +31,7 @@ namespace WebDemo.Models
         public virtual DbSet<Products> Products { get; set; }
         public virtual DbSet<ListCategories> ListCategories { get; set; }
         public virtual DbSet<Blogs> Blogs { get; set; }
-        public virtual DbSet<DetailProduct> DetailProduct { get; set; }
         public virtual DbSet<PersonalInfo> PersonalInfo { get; set; }
+        public virtual DbSet<BlogCategories> BlogCategories { get; set; }
     }
 }

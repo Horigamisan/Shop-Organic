@@ -54,7 +54,7 @@
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star-half-o"></i>
-                        <span>@ViewBag.detail.reviews_number</span>
+                        <span>@Model.reviews_number</span>
                     </div>
                     <div class="product__details__price">@Model.price VNĐ</div>
                     <p>
@@ -70,9 +70,9 @@
                     <a href="#" class="primary-btn">THÊM VÀO GIỎ</a>
                     <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
                     <ul>
-                        <li><b>Trạng thái</b> <span>@ViewBag.detail.availability</span></li>
-                        <li><b>Thời gian giao hàng</b> <span>@ViewBag.detail.shipping_day</span></li>
-                        <li><b>Cân nặng</b> <span>@ViewBag.detail.weight</span></li>
+                        <li><b>Trạng thái</b> <span>@Model.availability</span></li>
+                        <li><b>Thời gian giao hàng</b> <span>@Model.shipping_day</span></li>
+                        <li><b>Cân nặng</b> <span>@Model.weight</span></li>
                         <li>
                             <b>Chia sẻ trên</b>
                             <div class="share">
@@ -102,7 +102,7 @@
                             <div class="product__details__tab__desc">
                                 <h6>Thông tin sản phẩm</h6>
                                 <p>
-                                    @ViewBag.detail.detail_description
+                                    @Model.detail_description
                                 </p>
                             </div>
                         </div>
@@ -110,7 +110,7 @@
                             <div class="product__details__tab__desc">
                                 <h6>Review từ khách hàng</h6>
                                 <p>
-                                    @ViewBag.detail.review_comment
+                                    @Model.review_comment
                                 </p>
                             </div>
                         </div>

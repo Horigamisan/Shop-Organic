@@ -23,10 +23,21 @@ namespace WebDemo
                new RouteValueDictionary(new { type = "san-pham" }),
                namespaces: new[] { "WebDemo.Controllers" });
 
+
             routes.MapRoute("Contact", "{type}/{meta}",
                new { controller = "Contact", action = "Index", meta = UrlParameter.Optional },
                new RouteValueDictionary(new { type = "lien-he" }),
                namespaces: new[] { "WebDemo.Controllers" });
+
+            routes.MapRoute("Blog", "{type}/{meta}",
+               new { controller = "Blog", action = "Index", meta = UrlParameter.Optional },
+               new RouteValueDictionary(new { type = "blog" }),
+               namespaces: new[] { "WebDemo.Controllers" });
+
+            routes.MapRoute("DetailBlog", "{type}/{meta}/{id}",
+              new { controller = "Blog", action = "getDetailBlog", meta = UrlParameter.Optional },
+              new RouteValueDictionary(new { type = "blog" }),
+              namespaces: new[] { "WebDemo.Controllers" });
 
             routes.MapRoute(
                 name: "Default",

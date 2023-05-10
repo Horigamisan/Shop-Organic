@@ -50,6 +50,7 @@ namespace WebDemo.Areas.admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                menu.datebegin = Convert.ToDateTime(DateTime.Now.ToShortDateString());
                 db.menu.Add(menu);
                 db.SaveChanges();
                 return RedirectToAction("Index");

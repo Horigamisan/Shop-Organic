@@ -31,8 +31,8 @@ namespace WebDemo.Controllers
             var model = db.Products.Where(x => x.hide == false && x.id == id).FirstOrDefault();
             var category = db.ListCategories.Where(x => x.id == model.categoryid).FirstOrDefault();
             ViewBag.category = category;
-            var detail = db.DetailProduct.Where(x => x.productid == id).FirstOrDefault();
-            ViewBag.detail = detail;
+            //var detail = db.DetailProduct.Where(x => x.productid == id).FirstOrDefault();
+            //ViewBag.detail = detail;
             return View(model);
         }
 

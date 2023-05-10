@@ -25,5 +25,7 @@ namespace WebDemo.Models
         public Nullable<int> order { get; set; }
         public Nullable<System.DateTime> datebegin { get; set; }
         public string img { get; set; }
+        public Nullable<int> categoryid { get; set; }
+        public string author { get; set; }
     }
 }

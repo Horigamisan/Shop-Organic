@@ -5,69 +5,79 @@
     Layout = "~/Areas/admin/Views/Shared/Layout.cshtml";
 }
 
-<h2>Delete</h2>
+<h3>Bạn có chắc muốn xoá menu này?</h3>
+<div class="row justify-content-center">
+    <div class="col-lg-10">
+        <!-- DataTales Example -->
+        <div class="card border-danger shadow mb-4">
+            <div class="card-header bg-danger py-3">
+                <h6 class="m-0 font-weight-bold text-white">Thông tin menu</h6>
+            </div>
+            <div class="card-body">
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>menu</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.name)
-        </dt>
+                <div class="form-horizontal">
+                    <div class="row form-group">
+                        @Html.Label("Tên menu", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DisplayFor(model => model.name)
+                        </div>
+                    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.name)
-        </dd>
+                    <div class="row form-group">
+                        @Html.Label("Link", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DisplayFor(model => model.link)
+                        </div>
+                    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.link)
-        </dt>
+                    <div class="row form-group">
+                        @Html.Label("Meta", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DisplayFor(model => model.meta)
+                        </div>
+                    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.link)
-        </dd>
+                    <div class="row form-group">
+                        @Html.Label("Hiển thị", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="checkbox">
+                            @{
+                                bool hide = (Model.hide.GetValueOrDefault(false) ? true : false);
+                            }
+                            @Html.CheckBoxFor(model => hide, new
+                            {
+                                style = "margin: -1px 5px",
+                                disabled = "disabled"
+                            })
+                            @Html.ValidationMessageFor(model => model.hide, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.meta)
-        </dt>
+                    <div class="row form-group">
+                        @Html.Label("Thứ tự", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DisplayFor(model => model.order)
+                        </div>
+                    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.meta)
-        </dd>
+                    <div class="row form-group">
+                        @Html.Label("Ngày bắt đầu", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DisplayFor(model => model.datebegin)
+                        </div>
+                    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.hide)
-        </dt>
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
 
-        <dd>
-            @Html.DisplayFor(model => model.hide)
-        </dd>
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Xoá" class="btn btn-primary" /> |
+                            @Html.ActionLink("Trở về danh sách", "Index")
+                        </div>
+                    }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.order)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.order)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.datebegin)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.datebegin)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+                </div>
+            </div>
         </div>
-    }
+    </div>
 </div>

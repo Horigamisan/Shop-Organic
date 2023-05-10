@@ -27,6 +27,11 @@ namespace WebDemo.Models
         public Nullable<bool> latest_product { get; set; }
         public Nullable<bool> top_product { get; set; }
         public Nullable<bool> review_product { get; set; }
-        public Nullable<int> detail_id { get; set; }
+        public Nullable<int> reviews_number { get; set; }
+        public string availability { get; set; }
+        public string shipping_day { get; set; }
+        public string weight { get; set; }
+        public string detail_description { get; set; }
+        public string review_comment { get; set; }
     }
 }

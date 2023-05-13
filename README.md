@@ -1,4 +1,3 @@
-# Shop-Organic
 # How to run this program?
 Trang web được xây dựng trên nền tảng ASP.NET MVC và database sử dụng là SQL Server. 
 
@@ -17,4 +16,4 @@ Bước 3: Mở file Web.config và tìm đoạn code sau:
 ```
 Bước 4: Trong 2 đoạn code, thay data source thành tên server trong SQL Server của bạn và lưu file (Lưu ý là chúng ta phải thay ở cả hai đoạn code trên).
 
-Bước 5: Build project và hiển thị web.
+Bước 5: Build project và hiển thị web, tài khoản cho admin: admin@gmail.com - appadmin

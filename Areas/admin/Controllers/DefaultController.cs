@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace WebDemo.Areas.admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class DefaultController : Controller
     {
         // GET: admin/Default
@@ -13,5 +14,6 @@ namespace WebDemo.Areas.admin.Controllers
         {
             return View();
         }
+
     }
 }

@@ -41,10 +41,8 @@
             </div>
             <div class="col-lg-8 col-md-7 order-md-1 order-1">
                 <div class="blog__details__text">
-                    <img src="~/Uploads/img/blog/@Model.img" alt="">
-                    <p>
-                        @Model.detail
-                    </p>
+                    <img src="~/Uploads/img/blog/@Model.img" alt="" width="500" height="400" class="mx-auto">
+                    @Html.Raw(Model.detail)
 
                 </div>
                 <div class="blog__details__content">

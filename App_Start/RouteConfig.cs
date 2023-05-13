@@ -13,6 +13,31 @@ namespace WebDemo
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapRoute("Shop", "{type}/{meta}",
+                new { controller = "Shop", action = "Index", meta = UrlParameter.Optional },
+                new RouteValueDictionary(new { type = "cua-hang" }),
+                namespaces: new[] { "WebDemo.Controllers" });
+
+            routes.MapRoute("Home", "{type}/{meta}",
+                new { controller = "Default", action = "Index", meta = UrlParameter.Optional },
+                new RouteValueDictionary(new { type = "trang-chu" }),
+                namespaces: new[] { "WebDemo.Controllers" });
+
+            routes.MapRoute("OrderHistory", "{type}/{meta}",
+                new { controller = "Checkout", action = "OrderHistory", meta = UrlParameter.Optional },
+                new RouteValueDictionary(new { type = "lich-su-mua-hang" }),
+                namespaces: new[] { "WebDemo.Controllers" });
+
+            routes.MapRoute("Checkout", "{type}/{meta}",
+                new { controller = "Checkout", action = "Index", meta = UrlParameter.Optional },
+                new RouteValueDictionary(new { type = "thanh-toan" }),
+                namespaces: new[] { "WebDemo.Controllers" });
+
+            routes.MapRoute("Carts", "{type}/{meta}",
+                new { controller = "Carts", action = "Index", meta = UrlParameter.Optional },
+                new RouteValueDictionary(new { type = "gio-hang" }),
+                namespaces: new[] { "WebDemo.Controllers" });
+
             routes.MapRoute("Product", "{type}/{meta}",
                 new { controller = "Product", action = "Index", meta = UrlParameter.Optional },
                 new RouteValueDictionary(new { type = "san-pham" }),

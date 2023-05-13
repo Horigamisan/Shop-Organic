@@ -14,6 +14,13 @@ namespace WebDemo.Models
     
     public partial class Products
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Products()
+        {
+            this.Carts = new HashSet<Carts>();
+            this.OrderProduct = new HashSet<OrderProduct>();
+        }
+    
         public int id { get; set; }
         public string name { get; set; }
         public Nullable<double> price { get; set; }
@@ -33,5 +40,10 @@ namespace WebDemo.Models
         public string weight { get; set; }
         public string detail_description { get; set; }
         public string review_comment { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Carts> Carts { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OrderProduct> OrderProduct { get; set; }
     }
 }

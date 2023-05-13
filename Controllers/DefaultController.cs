@@ -47,26 +47,23 @@ namespace WebDemo.Controllers
 
         public ActionResult getLastestProduct()
         {
-            {
+                ViewBag.meta = "san-pham";
                 var model = db.Products.Where(x => x.hide == false && x.latest_product == true).OrderByDescending(x => x.order).ToList();
                 return PartialView(model);
-            }
         }
 
         public ActionResult getTopProduct()
         {
-            {
+                ViewBag.meta = "san-pham";
                 var model = db.Products.Where(x => x.hide == false && x.top_product == true).OrderByDescending(x => x.order).ToList();
                 return PartialView(model);
-            }
         }
 
         public ActionResult getReviewProduct()
         {
-            {
+                ViewBag.meta = "san-pham";
                 var model = db.Products.Where(x => x.hide == false && x.review_product == true).OrderByDescending(x => x.order).ToList();
                 return PartialView(model);
-            }
         }
 
         public ActionResult getBlogs()

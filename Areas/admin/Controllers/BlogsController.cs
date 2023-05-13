@@ -12,6 +12,7 @@ using WebDemo.Models;
 
 namespace WebDemo.Areas.admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class BlogsController : Controller
     {
         private ShopOnlineEntities db = new ShopOnlineEntities();
@@ -165,7 +166,7 @@ namespace WebDemo.Areas.admin.Controllers
                     db.Entry(temp).State = EntityState.Modified;
                     db.SaveChanges();
                     //return RedirectToAction("Index");
-                    return RedirectToAction("Index", "Products", new { id = blogs.categoryid });
+                    return RedirectToAction("Index", "Blogs", new { id = blogs.categoryid });
                 }
             }
             catch (DbEntityValidationException e)

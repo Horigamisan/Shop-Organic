@@ -13,6 +13,7 @@ namespace WebDemo.Controllers
         // GET: Layout
         public ActionResult Index()
         {
+            ViewBag.NumberPhone = db.PersonalInfo.Where(x => x.hide == false).FirstOrDefault().phone;
             return View();
         }
         
@@ -25,7 +26,7 @@ namespace WebDemo.Controllers
         
         public ActionResult getMenu()
         {
-            var model = db.menu.Where(x => x.hide == true).OrderByDescending(x => x.order).ToList();
+            var model = db.menu.Where(x => x.hide == false).OrderBy(x => x.order).ToList();
             return PartialView(model);
         }
         public ActionResult getAboutInFooter()
@@ -37,6 +38,21 @@ namespace WebDemo.Controllers
         public ActionResult getUsefulLinksInFooter()
         {
             var model = db.UsefulLinks.Where(x => x.hide == false).OrderByDescending(x => x.order).ToList();
+            return PartialView(model);
+        }
+
+        public ActionResult renderCarts()
+        {
+             var emailUser = User.Identity.Name;
+            if (!User.Identity.IsAuthenticated)
+            {
+                return PartialView();
+            }
+            var userId = db.AspNetUsers.Where(x => x.Email == emailUser).FirstOrDefault().Id;
+                var model = db.Carts.Where(x => x.UserID == userId && x.Status != "Huỷ" && x.Status != "Đã thanh toán");
+            var orderHistory = db.Orders.Where(x => x.UserID == userId);
+                ViewBag.Products = db.Products.ToList();
+            ViewBag.OrderHistory = orderHistory.Count();
             return PartialView(model);
         }
     }

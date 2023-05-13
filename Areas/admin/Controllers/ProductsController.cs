@@ -14,6 +14,7 @@ using WebDemo.Helper;
 
 namespace WebDemo.Areas.admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ProductsController : Controller
     {
         private ShopOnlineEntities db = new ShopOnlineEntities();

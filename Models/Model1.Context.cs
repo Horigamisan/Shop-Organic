@@ -33,5 +33,13 @@ namespace WebDemo.Models
         public virtual DbSet<Blogs> Blogs { get; set; }
         public virtual DbSet<PersonalInfo> PersonalInfo { get; set; }
         public virtual DbSet<BlogCategories> BlogCategories { get; set; }
+        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
+        public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
+        public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
+        public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
+        public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
+        public virtual DbSet<Carts> Carts { get; set; }
+        public virtual DbSet<OrderProduct> OrderProduct { get; set; }
+        public virtual DbSet<Orders> Orders { get; set; }
     }
 }

@@ -10,6 +10,7 @@ using WebDemo.Models;
 
 namespace WebDemo.Areas.admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class BannersController : Controller
     {
         private ShopOnlineEntities db = new ShopOnlineEntities();
